@@ -253,6 +253,8 @@ const getCountryData = function (country) {
         .then(response => response.json())
         .then(data => {
             renderCountry(data[0]);
+            console.log(data[0])
+            if (data[0].name === 'Brazil') data[0].borders.splice(3, 1);
             const neighbour = data[0].borders;
             console.log(neighbour)
             if (!neighbour) return;
